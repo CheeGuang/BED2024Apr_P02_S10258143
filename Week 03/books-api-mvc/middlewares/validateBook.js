@@ -6,7 +6,7 @@ const validateBook = (req, res, next) => {
     author: Joi.string().min(3).max(50).required(),
   });
 
-  const validation = schema.validate(req.body, { abortEarly: false });
+  const validation = schema.validate(req.body, { abortEarly: false }); // Validate request body
 
   if (validation.error) {
     const errors = validation.error.details.map((error) => error.message);
@@ -14,7 +14,7 @@ const validateBook = (req, res, next) => {
     return; // Terminate middleware execution on validation error
   }
 
-  next();
+  next(); // If validation passes, proceed to the next route handler
 };
 
 module.exports = validateBook;
