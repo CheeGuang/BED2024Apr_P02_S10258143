@@ -15,7 +15,6 @@ app.post("/books", validateBook, booksController.createBook); // Add validateBoo
 app.put("/books/:id", validateBook, booksController.updateBook); // Add validateBook before updateBook
 app.delete("/books/:id", booksController.deleteBook);
 
-
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
