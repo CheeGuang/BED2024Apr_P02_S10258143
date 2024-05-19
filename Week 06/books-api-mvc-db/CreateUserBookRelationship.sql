@@ -1,0 +1,5 @@
+CREATE TABLE UserBooks (
+  id INT PRIMARY KEY IDENTITY,
+  user_id INT FOREIGN KEY REFERENCES Users(id),
+  book_id INT FOREIGN KEY REFERENCES Books(id)
+);
